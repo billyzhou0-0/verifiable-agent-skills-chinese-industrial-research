@@ -100,3 +100,16 @@ description: 中国工业行业可验证调研方法论：GB标准/厂商规格/
 - `scripts/openstd_std_list.py` — 纯标准库 CLI：openstd std_list 批量关键词搜索（内置 5s 限速 sleep），输出 `hcno|标准号|名称|状态|发布日|实施日` 行。
 - `scripts/s360_search.py` — 纯标准库 CLI：360 搜索 + 真实 URL 提取（`python3 s360_search.py "<query>" [n]` → `标题 | data-mdurl真实URL | 摘要`）。
 - `scripts/spec_table_extract.py` — 纯标准库 CLI：抓取页面（直连 curl，JS 站自动回退 r.jina.ai）并打印全部表格行 + 关键值参数行（型号/产量/功率/尺寸/重量/产能 模式）。
+
+## 使用示例（Example usage）
+
+**场景**：生产"某行业工程知识包"（如屠宰行业）。
+**执行**：
+1. openstd 检索行业标准，记录标准号/状态/代替关系
+2. 厂商官网抓取设备参数（sitemap → 产品页 → 参数块提取）
+3. 上市公司年报/招股书补充工厂规模数据（cninfo → PDF → pymupdf）
+4. 环评报告全本提供建筑参数（省级受理公示 → 全本 PDF 直链）
+5. 每条数据抓取时立即登记引用台账
+6. 交付前跑审计扫描（audit_doc_scan.py）：编号连续性/未定义引用/【待核实】计数
+
+**输出**：行业工程知识包（设备表+厂房参数+标准清单+Sources 块），全部数据可回源。
