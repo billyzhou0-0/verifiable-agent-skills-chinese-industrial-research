@@ -6,16 +6,16 @@
 **Verifiable research workflow for Chinese industrial and manufacturing industries — every data point back-to-source, no fabrication allowed.**
 **可验证的中国工业/制造业调研工作流——每个数据点都能回源，绝不允许编造。**
 
-This skill encodes a research methodology proven on a 21-industry multi-worker pipeline (food processing, slaughter, cold chain, injection molding, PV modules, cement, and more). The deliverable is a **verifiable engineering knowledge pack**: equipment models and parameters, plant/building parameters, utility engineering data, and standard numbers — every one tied to a real Chinese source with a URL.
-本技能沉淀了一套在 21 行业多 Worker 流水线上验证过的调研方法论（食品加工、屠宰、冷库冷链、注塑、光伏组件、水泥等）。产出是**可验证的工程知识包**：设备型号与参数、厂房/建筑参数、公用工程数据、标准编号——每一条都挂着一个真实的中国来源 URL。
+This skill encodes a research methodology proven on a 30+ industry multi-worker pipeline (food processing, slaughter, cold chain, injection molding, PV modules, cement, and more). The deliverable is a **verifiable engineering knowledge pack**: equipment models and parameters, plant/building parameters, utility engineering data, and standard numbers — every one tied to a real Chinese source with a URL.
+本技能沉淀了一套在 30+ 行业多 Worker 流水线上验证过的调研方法论（食品加工、屠宰、冷库冷链、注塑、光伏组件、水泥等）。产出是**可验证的工程知识包**：设备型号与参数、厂房/建筑参数、公用工程数据、标准编号——每一条都挂着一个真实的中国来源 URL。
 
 ## Why this exists（为什么做这个）
 
 Chinese industry data is where AI hallucination goes to hide: search engines are captcha-walled, vendor domains rot silently (transferred domains still return HTTP 200), standards are scattered across four databases, and AI agents confidently invent model numbers and URLs.
 中国行业数据是 AI 幻觉的藏身处：搜索引擎全被验证码挡住，厂商域名悄悄腐烂（转让出去的域名仍然返回 HTTP 200），标准散落在四个数据库里，而 AI 会自信地编造型号和网址。
 
-Full-coverage audits of **590 URLs and 2,192 data points** across a 21-industry pipeline caught fabricated citations, wrong-page references, and mis-attributed numbers. This workflow is the result: every number back-to-source, every unverifiable item honestly marked 【待核实】(to be verified), and an audit stage that treats every claim as guilty until proven.
-21 行业流水线的**全量审计（590 个 URL、2,192 个数据点）**抓出了编造的引用、错页引用、张冠李戴的数字。本工作流就是那次审计的产物：每个数字回源、每个查不到的都诚实标注【待核实】、审计阶段把每条声称当"有罪推定"直到证明为真。
+Full-coverage audits of **5,000+ URLs and 20,000+ data points** across a 30+ industry pipeline caught fabricated citations, wrong-page references, and mis-attributed numbers. This workflow is the result: every number back-to-source, every unverifiable item honestly marked 【待核实】(to be verified), and an audit stage that treats every claim as guilty until proven.
+30+ 行业流水线的**全量审计（5,000+ 个 URL、20,000+ 个数据点）**抓出了编造的引用、错页引用、张冠李戴的数字。本工作流就是那次审计的产物：每个数字回源、每个查不到的都诚实标注【待核实】、审计阶段把每条声称当"有罪推定"直到证明为真。
 
 ## Golden rules（金规则）
 
@@ -57,7 +57,7 @@ Most curl-able search engines are captcha/WAF-blocked from mainland China. **360
 The pipeline's LAST stage audits every knowledge pack for data authenticity:
 流水线最后阶段审计每个知识包的数据真实性（只读，不改包）：
 
-1. **Programmatic full-text scan / 程序化全文本扫描** — Sources numbering continuity, undefined refs, coverage, `[unverified]` residue, mixed citations, table rows. Round result: 21/21 packs had 100% ref integrity. Sources 编号连续性、未定义引用、覆盖率、残留标记、表格行数。实测 21/21 包引用完整性 100%。
+1. **Programmatic full-text scan / 程序化全文本扫描** — Sources numbering continuity, undefined refs, coverage, `[unverified]` residue, mixed citations, table rows. Round result: 30/30 packs had 100% ref integrity. Sources 编号连续性、未定义引用、覆盖率、残留标记、表格行数。实测 30/30 包引用完整性 100%。
 2. **Sampled source verification / 抽样源验证**（≥5 URLs/pack）— parallel curl; classify failures: dynamic (403/WAF: retry) vs permanent (domain transfer: check title, not status code). 并行 curl；失败分类：动态（重试）vs 永久（查标题，不看状态码）。
 3. **Value verification / 数值验证**（2-3 key numbers/pack）— HTML grep; PDF pymupdf + regex. **URL 200 ≠ claim supported** — verify content presence, and **check BOTH formatting variants before declaring absence** (a "missing" value was found after normalizing thousands separators and entity-encoded dashes). HTML 剥文本 grep；PDF pymupdf+正则。**URL 200 ≠ 数据被支持**；声明"页面无此值"前必须验证两种格式变体（曾有一次"缺失"判定被推翻：千分位+实体破折号导致漏检）。
 4. **Full-coverage round / 全量轮**（when the user rejects sampling — "每项都查，不是抽查"）— run EVERYTHING: all URLs (batch curl with 3 passes + content-check), all values (fetch each unique URL once, match with format variants: thousands separators, ×/x/–/~/−, 万/亿 scaling, 吨↔万吨, kN↔吨, inch↔mm). **404 ≠ dead**: probe site root + sitemap before classifying. **False-negative traps**: PDF table cells concatenate digits; JS tables hide values in `data-v` attributes (re-grep RAW HTML); never conclude "value absent" from one search form.
