@@ -2,34 +2,46 @@
 
 All notable changes to this project are documented here, following Keep a Changelog with semver versioning. / 本文件按 Keep a Changelog 规范记录本项目所有重要变更。
 
-## [1.1.1] - 2026-08-11
+> Versions 0.x document the real evolution of this methodology before open-sourcing (verified against internal git history, audit reports, and knowledge-base archives); 1.x documents the open-source release. / 0.x 记录开源前方法论的真实演进史（经内部存档核实）；1.x 记录开源发布。
 
-### Patch Changes / 补丁
+## [0.1.0] - 2026-08-06
 
-- [`f5cf663`](https://github.com/billyzhou0-0/verifiable-agent-skills-chinese-industrial-research/commit/f5cf663) Add `CHANGELOG.md` and `CONTRIBUTING.md`; add an **Example usage（使用示例）** section to `SKILL.md` (scenario → steps → expected output). / 添加更新记录与贡献指南；SKILL.md 新增使用示例（场景→步骤→输出）。
+### Pre-release (internal) / 开源前内部版本
 
-## [1.1.0] - 2026-08-11
+- 21 行业调研流水线收官：行业知识包生产指南 V02/V03/V7 终版（只增不减条款演进）；21 个行业工程知识包全部产出，引用完整性 100%。/ 流水线收官。
 
-### Minor Changes / 次要版本：发布打磨（Release polish）
+## [0.2.0] - 2026-08-06
 
-- [`9f96c1d`](https://github.com/billyzhou0-0/verifiable-agent-skills-chinese-industrial-research/commit/9f96c1d), [`e1ffbb8`](https://github.com/billyzhou0-0/verifiable-agent-skills-chinese-industrial-research/commit/e1ffbb8) — README overhaul: / README 改造：
-  - Description rewritten pain-point-first (EN+CN) / 描述痛点驱动（双语）
-  - Topics tags added / 添加 Topics 标签
-  - License + Stars badges / License 和 Stars 徽章
-  - 'Why this exists' pain-point story / '为什么做这个'痛点故事
-  - README fully bilingual (native-level EN + CN, every paragraph and table cell) / README 全面中英双语
+### Pre-release (internal) / 开源前内部版本
+
+- 审计 V02 全量轮（用户否决抽样）：590 URL 三遍批量验证、2,192 数据点回源（格式变体匹配：千分位/万/亿/吨↔万吨）；新问题类发现（范围连写 [n]-[m] 13 处、引用错页）。/ 全量审计轮。
+
+## [0.3.0] - 2026-08-06
+
+### Pre-release (internal) / 开源前内部版本
+
+- 补强轮：按审计可执行修复指令 V01→V02（只加不删，diff 审计零删除）；覆盖率修复零编造三模式；B2 平反 guard（88,000 kN 数值平反）。/ 补强轮。
+
+## [0.4.0] - 2026-08-06
+
+### Pre-release (internal) / 开源前内部版本
+
+- V03 验收审计：约 70 处修复全落地 0 假销项；fake-IP DNS 陷阱处置（DoH 取真实 IP + curl --resolve）；21/21 包零残留。/ 验收轮。
+
+## [0.5.0] - 2026-08-07
+
+### Pre-release (internal) / 开源前内部版本
+
+- 工业数据源矩阵轮：约 90 个数据源实测（政府 WAF 分级/协会域名修正/akshare 接口清单）；防幻觉自检抓出编造接口名。/ 数据源矩阵。
+
+## [0.6.0] - 2026-08-10~11
+
+### Pre-release (internal) / 开源前内部版本
+
+- 对账式补搜轮（Worker 1a/1b/1c）：制药/水泥/光伏/乳制品/注塑/啤酒 缺口补搜；渠道×行业效果表；图片型选型 PDF OCR 配方；360 搜索 data-mdurl 通道。/ 补搜轮。
 
 ## [1.0.0] - 2026-08-11
 
 ### Initial open-source release / 初始开源发布
 
-- [`6321013`](https://github.com/billyzhou0-0/verifiable-agent-skills-chinese-industrial-research/commit/6321013) — Initial release. / 初始发布。
-
-- **Verifiability golden rules / 可验证金规则** — URLs registered in the citation ledger at retrieval time (never from memory); write-as-you-go per industry; never fabricate (missing → 【待核实】); source priority openstd > industry standards > vendor sites. 抓取时即登记引用台账；边研边写；绝不编造（查不到标【待核实】）；来源优先级。
-- **Proven channels / 实测渠道配方** — GB-standard three-tier lookup (openstd/hbba/foodmate), vendor spec extraction recipes (sitemap, data-v attribute tables, image-PDF OCR), EIA full-report direct links, listed-company documents (cninfo/prospectus). 标准三层检索、厂商数据提取配方（sitemap/data-v 属性表/图片 PDF OCR）、环评全本直链、上市公司文档。
-- **Audit methodology / 审计方法论** — programmatic full-text scan, sampled source verification, value verification with format-variant checks, full-coverage round (590 URLs / 2,192 data points verified in production, 0 fabricated findings). 程序化扫描、抽样源验证、格式变体数值验证、全量轮（实战 590 URL/2,192 数据点，0 编造）。
-- **Tiered acceptance lines / 分级验收线** — A 类 (≥30 sources, ≥60 data points) vs B 类 (≥15 sources + honest-declaration triad); the tier line is not a laziness line. A/B 分级验收；分级线不是偷懒线。
-- **Reinforcement round / 补强轮** — V01→V02 patch per audit's copy-executable fix instructions; add-only discipline with diff audit; coverage repair without fabricating (3 proven patterns). 按审计指令补丁升级；只加不删+diff 审计；零编造覆盖率修复三模式。
-- **Included scripts / 附带脚本** — `audit_doc_scan.py`, `cn_std_search.py`, `openstd_std_list.py`, `s360_search.py`, `spec_table_extract.py` (all stdlib-only). 5 个纯标准库脚本。
-
-> Background / 背景：The methodology ran a 21-industry multi-worker research pipeline (2026-08), produced 21 knowledge packs with 100% citation integrity, and evolved the process guide through V1→V7 plus four audit rounds (initial / full-coverage / reinforcement / acceptance V03) before open-sourcing. / 方法论运行了 21 行业多 Worker 调研流水线（2026-08），产出 21 个知识包（引用完整性 100%），流程指南演进 V1→V7，历经四轮审计后开源。
+- 开源发布：方法论版 SKILL.md + 5 个纯标准库脚本 + README（痛点故事+双语）+ MIT。/ 开源发布。
