@@ -4,6 +4,14 @@
 
 This skill encodes a research methodology proven on a 21-industry multi-worker pipeline (food processing, slaughter, cold chain, injection molding, PV modules, cement, and more). The deliverable is a **verifiable engineering knowledge pack**: equipment models and parameters, plant/building parameters, utility engineering data, and standard numbers — every one tied to a real Chinese source with a URL.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/billyzhou0-0/verifiable-agent-skills-chinese-industrial-research.svg)](https://github.com/billyzhou0-0/verifiable-agent-skills-chinese-industrial-research/stargazers)
+## Why this exists（为什么做这个）
+
+Chinese industry data is where AI hallucination goes to hide: search engines are captcha-walled, vendor domains rot silently (transferred domains still return HTTP 200), standards are scattered across four databases, and AI agents confidently invent model numbers and URLs.
+
+Full-coverage audits of **590 URLs and 2,192 data points** across a 21-industry pipeline caught fabricated citations, wrong-page references, and mis-attributed numbers. This workflow is the result: every number back-to-source, every unverifiable item honestly marked 【待核实】(to be verified), and an audit stage that treats every claim as guilty until proven.
+
 ## What problem it solves
 
 - AI research on Chinese industries produces **hallucinated model numbers, wrong standards, fabricated URLs** — because search-engine summaries lie and vendor sites rot.
