@@ -7,7 +7,7 @@
 **可验证的中国工业/制造业调研工作流——每个数据点都能回源，绝不允许编造。**
 
 This skill encodes a research methodology proven on a 30+ industry multi-worker pipeline (food processing, slaughter, cold chain, injection molding, PV modules, cement, and more). The deliverable is a **verifiable engineering knowledge pack**: equipment models and parameters, plant/building parameters, utility engineering data, and standard numbers — every one tied to a real Chinese source with a URL.
-本技能沉淀了一套在 30+ 行业多 Worker 流水线上验证过的调研方法论（食品加工、屠宰、冷库冷链、注塑、光伏组件、水泥等）。产出是**可验证的工程知识包**：设备型号与参数、厂房/建筑参数、公用工程数据、标准编号——每一条都挂着一个真实的中国来源 URL。
+本技能总结了一套在 30+ 行业多 Worker 流水线上验证过的调研方法论（食品加工、屠宰、冷库冷链、注塑、光伏组件、水泥等）。产出是**可验证的工程知识包**：设备型号与参数、厂房/建筑参数、公用工程数据、标准编号——每一条都挂着一个真实的中国来源 URL。
 
 ## Why this exists（为什么做这个）
 
@@ -46,7 +46,7 @@ Full-coverage audits of **5,000+ URLs and 20,000+ data points** across a 30+ ind
 
 ### Official environmental platforms（官方环保平台——公用工程/建筑参数）
 - permit.mee.gov.cn — no captcha with curl + UA; license info + emission standards per plant. / 全国排污许可平台——curl 无验证码；排污许可信息含排放执行标准。
-- EIA full reports (the richest source of building params: 占地/建筑面积/净高/柱网) live at provincial 受理公示 pages with full-report PDF direct links — 551-page EIA reports downloadable via plain curl. Note: 批复 pages are title-only; 受理公示 pages carry the full report. / 环评报告书全本（建筑参数最丰富：占地/建筑面积/净高/柱网）在**省级受理公示**页附全本 PDF 直链——纯 curl 可下 551 页全本。注意：批复页只有标题，受理公示页才有全本。
+- EIA full reports (the richest source of building params: 占地/建筑面积/净高/柱网) live at provincial 受理公示 pages with full-report PDF direct links — hundreds-of-pages EIA reports downloadable via plain curl. Note: 批复 pages show only a title; 受理公示 pages carry the full report. / 环评报告书全本（建筑参数最丰富：占地/建筑面积/净高/柱网）在**省级受理公示**页附全本 PDF 直链——纯 curl 可下数百页全本。注意：批复页只有标题，受理公示页才有全本。
 
 ### Search engines: don't waste time（搜索引擎：别浪费时间）
 Most curl-able search engines are captcha/WAF-blocked from mainland China. **360 搜索 is curl-able** and is the one reliable Chinese discovery channel: result blocks carry `data-mdurl="<真实URL>"` — extract that attribute to bypass the JS redirect. Result snippets often already contain the key numbers. For everything else: skip search engines, go direct — standards databases, vendor sitemaps, B2B platforms, exchange announcement APIs.
