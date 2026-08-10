@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Bulk keyword search of openstd std_list, extracting hcno + standard metadata.
 
-Worker 6 recipe (2026-08): std_list rows embed hcno as
+Worker 6 recipe: std_list rows embed hcno as
 `<a href="javascript:o('<32-HEX>');">标准号</a>` — no browser needed.
 Built-in 5s rate-limit sleep between keywords (rapid-fire queries return
 empty result lists, which is transient limiting, NOT "no standards").
